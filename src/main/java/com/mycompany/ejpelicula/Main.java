@@ -1,6 +1,7 @@
 package com.mycompany.ejpelicula;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,13 @@ public class Main {
         ServicePelicula serv = new ServicePelicula();
         ArrayList<Pelicula> listadoPelis = new ArrayList();
         do{
-            listadoPelis.add(serv.cargarPelicula());
+            try{
+                listadoPelis.add(serv.cargarPelicula());
+            }
+            catch(NumberFormatException ex){
+                System.out.println("Error de tipos");
+            }
+            
             System.out.println("Desea agregar otra pelicula? Si o No");
             opcion = scan.nextLine();
         }while(opcion.equalsIgnoreCase("si"));

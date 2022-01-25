@@ -2,7 +2,6 @@ package com.mycompany.ejpelicula;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -10,7 +9,7 @@ public class ServicePelicula {
     
     Scanner scan = new Scanner(System.in);
     
-    public Pelicula cargarPelicula() throws InputMismatchException{
+    public Pelicula cargarPelicula() throws NumberFormatException{
         System.out.println("Ingrese titulo de la pelicula: ");
         String nombre = scan.nextLine();
         System.out.println("Ingrese director de la pelicula: ");
